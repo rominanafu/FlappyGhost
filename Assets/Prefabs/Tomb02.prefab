@@ -101,9 +101,9 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 1
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: ba1461d1508f8764d92f63a58a57c96e, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -123,7 +123,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 417973837308768329}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: ba1461d1508f8764d92f63a58a57c96e, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -171,4 +171,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01be38f5e9c5f4c4eba4487e9a4eb772, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  impulseForce: -3.5999985
+  impulseForce: -2

@@ -43,6 +43,12 @@ public class SkullMovement : MonoBehaviour {
         upwards = true;
     }
 
+    // Freeze skull on its position
+    public void StopMovement() {
+        r.constraints = RigidbodyConstraints2D.FreezePosition;
+        r.constraints = RigidbodyConstraints2D.FreezeRotation;
+    }
+
     // Change direction when limit is reached
     void Update() {
 
