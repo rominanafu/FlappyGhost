@@ -14,6 +14,8 @@ public class TombPosSpawner : MonoBehaviour {
     GameObject[] prefabTombs;
     [SerializeField]
     GameObject prefabKillerSkull;
+    [SerializeField]
+    GameObject prefabGhost;
 
     // Spawn control
     const float SpawnSpaceDelay = 5f;
@@ -40,6 +42,10 @@ public class TombPosSpawner : MonoBehaviour {
 
     // Calculate width and height sizes of sprites
     void Start() {
+        // Instantiate ghost
+        GameObject ghost = Instantiate<GameObject>(prefabGhost);
+        
+        // Calculate sizes
         for(int i=0; i<8; i++) {
             halfWidthTombs[i] = prefabTombs[i].GetComponent<SpriteRenderer>().bounds.size.x / 2;
             halfHeightTombs[i] = prefabTombs[i].GetComponent<SpriteRenderer>().bounds.size.y / 2;

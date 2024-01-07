@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7650907528871849761}
   - component: {fileID: 5052262883323300565}
   - component: {fileID: 689652855919949866}
-  - component: {fileID: 8696867807734636560}
+  - component: {fileID: 3768713723925164965}
   - component: {fileID: 7682000823164155421}
   m_Layer: 0
   m_Name: Tomb03
@@ -30,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: -1, y: -1, z: -1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -114,8 +114,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!61 &8696867807734636560
-BoxCollider2D:
+--- !u!60 &3768713723925164965
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -123,7 +123,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 2788707768550231962}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: ba1461d1508f8764d92f63a58a57c96e, type: 2}
+  m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -156,9 +156,43 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.25, y: 3.99}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.445, y: -0.205}
+      - {x: 0.465, y: -0.024999999}
+      - {x: 0.48499998, y: 0.13499999}
+      - {x: 0.60499996, y: 1.155}
+      - {x: 0.615, y: 1.3149999}
+      - {x: 0.615, y: 1.345}
+      - {x: 0.415, y: 1.795}
+      - {x: 0.325, y: 1.985}
+      - {x: 0.24499999, y: 1.985}
+      - {x: 0.235, y: 1.9749999}
+      - {x: -0.305, y: 1.9749999}
+      - {x: -0.325, y: 1.9649999}
+      - {x: -0.385, y: 1.8349999}
+      - {x: -0.435, y: 1.6949999}
+      - {x: -0.53499997, y: 1.4549999}
+      - {x: -0.60499996, y: 1.305}
+      - {x: -0.60499996, y: 1.165}
+      - {x: -0.59499997, y: 1.0649999}
+      - {x: -0.555, y: 0.705}
+      - {x: -0.545, y: 0.60499996}
+      - {x: -0.525, y: 0.42499998}
+      - {x: -0.515, y: 0.325}
+      - {x: -0.49499997, y: 0.145}
+      - {x: -0.475, y: -0.055}
+      - {x: -0.465, y: -0.16499999}
+      - {x: -0.45499998, y: -0.265}
+      - {x: -0.435, y: -0.48499998}
+      - {x: -0.315, y: -1.785}
+      - {x: -0.295, y: -1.9749999}
+      - {x: -0.275, y: -1.995}
+      - {x: 0.21499999, y: -1.995}
+      - {x: 0.235, y: -1.9749999}
+      - {x: 0.24499999, y: -1.905}
+      - {x: 0.315, y: -1.3149999}
+  m_UseDelaunayMesh: 0
 --- !u!114 &7682000823164155421
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -171,4 +205,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01be38f5e9c5f4c4eba4487e9a4eb772, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  impulseForce: -2.2499998
+  impulseForce: -14.400038

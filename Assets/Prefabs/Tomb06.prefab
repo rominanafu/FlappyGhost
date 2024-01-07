@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2292684786496265895}
   - component: {fileID: 4998174721808385190}
   - component: {fileID: 574229069661703285}
-  - component: {fileID: 5275997722241428108}
+  - component: {fileID: 647898072505987506}
   - component: {fileID: 5932745058757244457}
   m_Layer: 0
   m_Name: Tomb06
@@ -30,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 14.271614, y: -4.010875, z: 0}
-  m_LocalScale: {x: -1, y: -1, z: -1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -114,8 +114,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!61 &5275997722241428108
-BoxCollider2D:
+--- !u!60 &647898072505987506
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -123,7 +123,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 389894164564912666}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: ba1461d1508f8764d92f63a58a57c96e, type: 2}
+  m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -156,9 +156,38 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.28, y: 2.02}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.61, y: 0.41}
+      - {x: 0.61, y: 0.48999998}
+      - {x: 0.48999998, y: 0.72999996}
+      - {x: 0.48999998, y: 0.75}
+      - {x: 0.45, y: 0.84}
+      - {x: 0.42, y: 0.90999997}
+      - {x: 0.38, y: 0.98999995}
+      - {x: -0.39999998, y: 0.98999995}
+      - {x: -0.42, y: 0.96999997}
+      - {x: -0.48, y: 0.83}
+      - {x: -0.53, y: 0.71}
+      - {x: -0.62, y: 0.5}
+      - {x: -0.62, y: 0.35}
+      - {x: -0.59, y: 0.26}
+      - {x: -0.52, y: -0.04}
+      - {x: -0.51, y: -0.08}
+      - {x: -0.5, y: -0.13}
+      - {x: -0.48, y: -0.21}
+      - {x: -0.45, y: -0.35999998}
+      - {x: -0.42999998, y: -0.45}
+      - {x: -0.35999998, y: -0.75}
+      - {x: -0.35, y: -0.78999996}
+      - {x: -0.34, y: -0.84}
+      - {x: -0.31, y: -0.96}
+      - {x: -0.28, y: -0.98999995}
+      - {x: 0.31, y: -0.98999995}
+      - {x: 0.32999998, y: -0.96999997}
+      - {x: 0.35, y: -0.88}
+      - {x: 0.59, y: 0.32}
+  m_UseDelaunayMesh: 0
 --- !u!114 &5932745058757244457
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -171,4 +200,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01be38f5e9c5f4c4eba4487e9a4eb772, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  impulseForce: -2
+  impulseForce: -2.05

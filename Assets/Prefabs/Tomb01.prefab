@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6140596503496798740}
   - component: {fileID: 8825535217951693737}
   - component: {fileID: 709026825657816344}
-  - component: {fileID: 78417022420151493}
+  - component: {fileID: 8703750087710218525}
   - component: {fileID: 8294428262753814433}
   m_Layer: 0
   m_Name: Tomb01
@@ -114,8 +114,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!61 &78417022420151493
-BoxCollider2D:
+--- !u!60 &8703750087710218525
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -123,7 +123,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 9068733357395034729}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: ba1461d1508f8764d92f63a58a57c96e, type: 2}
+  m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -156,9 +156,55 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.26, y: 5.37}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.34, y: -2.185}
+      - {x: 0.35, y: -2.0449998}
+      - {x: 0.39, y: -1.505}
+      - {x: 0.39999998, y: -1.365}
+      - {x: 0.45999998, y: -0.555}
+      - {x: 0.48, y: -0.275}
+      - {x: 0.52, y: 0.265}
+      - {x: 0.53999996, y: 0.545}
+      - {x: 0.59, y: 1.2149999}
+      - {x: 0.59999996, y: 1.355}
+      - {x: 0.61, y: 1.425}
+      - {x: 0.61, y: 1.5649999}
+      - {x: 0.53, y: 1.795}
+      - {x: 0.38, y: 2.305}
+      - {x: 0.29, y: 2.605}
+      - {x: 0.26999998, y: 2.655}
+      - {x: -0.26999998, y: 2.655}
+      - {x: -0.29999998, y: 2.615}
+      - {x: -0.35, y: 2.425}
+      - {x: -0.56, y: 1.785}
+      - {x: -0.59, y: 1.675}
+      - {x: -0.59, y: 1.5749999}
+      - {x: -0.58, y: 1.425}
+      - {x: -0.56, y: 1.165}
+      - {x: -0.53999996, y: 0.91499996}
+      - {x: -0.51, y: 0.555}
+      - {x: -0.5, y: 0.42499998}
+      - {x: -0.48999998, y: 0.355}
+      - {x: -0.48, y: 0.21499999}
+      - {x: -0.47, y: 0.085}
+      - {x: -0.45999998, y: -0.055}
+      - {x: -0.45, y: -0.175}
+      - {x: -0.42999998, y: -0.42499998}
+      - {x: -0.42, y: -0.515}
+      - {x: -0.41, y: -0.66499996}
+      - {x: -0.37, y: -1.145}
+      - {x: -0.35, y: -1.395}
+      - {x: -0.32, y: -1.745}
+      - {x: -0.29999998, y: -2.0049999}
+      - {x: -0.26999998, y: -2.365}
+      - {x: -0.25, y: -2.615}
+      - {x: -0.22, y: -2.645}
+      - {x: 0.28, y: -2.645}
+      - {x: 0.29999998, y: -2.625}
+      - {x: 0.31, y: -2.585}
+      - {x: 0.32, y: -2.455}
+  m_UseDelaunayMesh: 0
 --- !u!114 &8294428262753814433
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -171,4 +217,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01be38f5e9c5f4c4eba4487e9a4eb772, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  impulseForce: -2
+  impulseForce: -2.1

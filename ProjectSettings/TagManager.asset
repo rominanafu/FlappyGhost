@@ -7,6 +7,7 @@ TagManager:
   - DestroyableObject
   - DestroyableBat
   - DestroyableSkull
+  - Ghost
   layers:
   - Default
   - TransparentFX
