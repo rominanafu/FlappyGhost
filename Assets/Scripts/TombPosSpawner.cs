@@ -115,7 +115,7 @@ public class TombPosSpawner : MonoBehaviour {
     // Call SpawnTombs() when the delay has been reached
     void Update() {
         // Begin spawning when there is a click or space button is pressed
-        if (Input.GetMouseButtonDown(0) || Input.GetKeyDown("space")) {
+        if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow)) {
             running = true;
         }
         if (!running) {
