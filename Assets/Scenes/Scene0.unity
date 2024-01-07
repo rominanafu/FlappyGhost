@@ -137,6 +137,7 @@ GameObject:
   - component: {fileID: 519420033}
   - component: {fileID: 519420036}
   - component: {fileID: 519420034}
+  - component: {fileID: 519420037}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -265,6 +266,19 @@ MonoBehaviour:
   - {fileID: 389894164564912666, guid: 2da8c54672f6e8d44ae3871903f84f61, type: 3}
   - {fileID: 960717963370693848, guid: 2d6011bd33377814f84b874599415c49, type: 3}
   prefabKillerSkull: {fileID: 143745415481863933, guid: 437dbe84a2010ea429b7a71451a66b44, type: 3}
+  prefabGhost: {fileID: 934400696293456408, guid: 4213a4df4f014824584b9a881380316b, type: 3}
+--- !u!114 &519420037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbf6d673566940c429f64e926905e6a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   prefabGhost: {fileID: 934400696293456408, guid: 4213a4df4f014824584b9a881380316b, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

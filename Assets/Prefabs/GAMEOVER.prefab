@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1786584022935146155}
   m_Layer: 0
   m_Name: GAMEOVER
-  m_TagString: Untagged
+  m_TagString: DestroyableObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

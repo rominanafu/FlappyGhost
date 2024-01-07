@@ -27,24 +27,28 @@ public class GameOver : MonoBehaviour {
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
         rb.constraints = RigidbodyConstraints2D.FreezePosition;
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+        tag = "DestroyableObject";
 
         // Stop tombs movement
-        GameObject tomb = GameObject.FindWithTag("DestroyableObject");
+        GameObject tomb = GameObject.FindWithTag("DestroyableTomb");
         while (tomb != null) {
             tomb.GetComponent<TombMovement>().StopMovement();
-            tomb.tag = "Untagged";
-            tomb = GameObject.FindWithTag("DestroyableObject");
+            tomb.tag = "DestroyableObject";
+            tomb = GameObject.FindWithTag("DestroyableTomb");
         }
 
         // Stop skulls movement
         GameObject skull = GameObject.FindWithTag("DestroyableSkull");
         while (skull != null) {
             skull.GetComponent<SkullMovement>().StopMovement();
-            skull.tag = "Untagged";
+            skull.tag = "DestroyableObject";
             skull = GameObject.FindWithTag("DestroyableSkull");
         }
 
         GameOverMessage();
+
+        Camera.main.GetComponent<TombPosSpawner>().SetGameOver(true);
+        Camera.main.GetComponent<PlayAgain>().SetGameOver(true);
 
     }
 

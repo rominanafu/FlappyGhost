@@ -24,7 +24,7 @@ public class TombPosSpawner : MonoBehaviour {
     GameObject lastTomb = null;
 
     // Initial impulse force for tombs spawning
-    float tombImpulse = -2f;
+    float tombImpulse;
 
     // Pairs of tombs
     Tuple<int,int>[] tombsPairs = {Tuple.Create(0, 7), Tuple.Create(1, 6), Tuple.Create(2, 5), Tuple.Create(3, 4),
@@ -38,6 +38,7 @@ public class TombPosSpawner : MonoBehaviour {
     float halfWidthSkull;
 
     bool running = false;
+    bool gameOver = false;
     int lastKillerSkullCont = 0;
 
     // Calculate width and height sizes of sprites
@@ -53,6 +54,13 @@ public class TombPosSpawner : MonoBehaviour {
         halfWidthSkull = prefabKillerSkull.GetComponent<SpriteRenderer>().bounds.size.x / 2;
         halfHeightSkull = prefabKillerSkull.GetComponent<SpriteRenderer>().bounds.size.y / 2;
         tombsPairsAmount = tombsPairs.Length;
+    }
+
+    public void SetGameOver(bool value=true) {
+        gameOver = value;
+        if (value == false) {
+            running = false;
+        }
     }
 
     // Spawn a skull between two prefabTombs[7]
@@ -116,7 +124,12 @@ public class TombPosSpawner : MonoBehaviour {
     void Update() {
         // Begin spawning when there is a click or space button is pressed
         if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow)) {
-            running = true;
+            if (!gameOver && !running) {
+                running = true;
+                lastTomb = null;
+                deltaX = SpawnSpaceDelay;
+                tombImpulse = -2f;
+            }
         }
         if (!running) {
             return;

@@ -23,7 +23,7 @@ public class Destroyer : MonoBehaviour {
         posIniX = worldLocation.x;
 
         // Find objects
-        GameObject obj = GameObject.FindWithTag("DestroyableObject");
+        GameObject obj = GameObject.FindWithTag("DestroyableTomb");
         GameObject bat = GameObject.FindWithTag("DestroyableBat");
         GameObject skull = GameObject.FindWithTag("DestroyableSkull");
 
