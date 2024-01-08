@@ -15,7 +15,7 @@ public class TombPosSpawner : MonoBehaviour {
     [SerializeField]
     GameObject prefabKillerSkull;
     [SerializeField]
-    GameObject prefabGhost;
+    GameObject prefabStripe;
 
     // Spawn control
     const float SpawnSpaceDelay = 5f;
@@ -27,33 +27,29 @@ public class TombPosSpawner : MonoBehaviour {
     float tombImpulse;
 
     // Pairs of tombs
-    Tuple<int,int>[] tombsPairs = {Tuple.Create(0, 7), Tuple.Create(1, 6), Tuple.Create(2, 5), Tuple.Create(3, 4),
-                                Tuple.Create(5, 2), Tuple.Create(6, 1), Tuple.Create(7, 0), Tuple.Create(7, 7)};
+    Tuple<int,int>[] tombsPairs = {Tuple.Create(1, 6), Tuple.Create(2, 5), Tuple.Create(3, 5),
+                                Tuple.Create(5, 3), Tuple.Create(5, 2), Tuple.Create(6, 1), Tuple.Create(2, 6),
+                                Tuple.Create(6, 2), Tuple.Create(6, 6)};
     int tombsPairsAmount;
 
     // Sprites sizes
     float[] halfHeightTombs = new float[8];
     float[] halfWidthTombs = new float[8];
-    float halfHeightSkull;
-    float halfWidthSkull;
+    float stripeSize;
 
     bool running = false;
     bool gameOver = false;
     int lastKillerSkullCont = 0;
 
     // Calculate width and height sizes of sprites
-    void Start() {
-        // Instantiate ghost
-        GameObject ghost = Instantiate<GameObject>(prefabGhost);
-        
+    void Start() {        
         // Calculate sizes
-        for(int i=0; i<8; i++) {
+        for(int i=0; i<7; i++) {
             halfWidthTombs[i] = prefabTombs[i].GetComponent<SpriteRenderer>().bounds.size.x / 2;
             halfHeightTombs[i] = prefabTombs[i].GetComponent<SpriteRenderer>().bounds.size.y / 2;
         }
-        halfWidthSkull = prefabKillerSkull.GetComponent<SpriteRenderer>().bounds.size.x / 2;
-        halfHeightSkull = prefabKillerSkull.GetComponent<SpriteRenderer>().bounds.size.y / 2;
         tombsPairsAmount = tombsPairs.Length;
+        stripeSize = prefabStripe.GetComponent<SpriteRenderer>().bounds.size.y * 0.7f / 6;
     }
 
     public void SetGameOver(bool value=true) {
@@ -63,7 +59,7 @@ public class TombPosSpawner : MonoBehaviour {
         }
     }
 
-    // Spawn a skull between two prefabTombs[7]
+    // Spawn a skull between two prefabTombs[6]
     void SpawnSkull(float x) {
         Vector3 locationSkull = new Vector3(x, 0, 0);
         prefabKillerSkull.GetComponent<SkullMovement>().SetImpulseForce = tombImpulse;
@@ -75,14 +71,14 @@ public class TombPosSpawner : MonoBehaviour {
 
         int ind = UnityEngine.Random.Range(0, tombsPairsAmount);
         if (lastKillerSkullCont >= 7) {
-            ind = 7;
+            ind = tombsPairsAmount-1;
         }
         
         // Lower tomb spawning
         Vector3 locationItem1 = new Vector3(Screen.width, 0, 0);
         locationItem1 = Camera.main.ScreenToWorldPoint(locationItem1);
         locationItem1.x += halfWidthTombs[tombsPairs[ind].Item1];
-        locationItem1.y += halfHeightTombs[tombsPairs[ind].Item1];
+        locationItem1.y += halfHeightTombs[tombsPairs[ind].Item1] + stripeSize;
         locationItem1.z = 0;
 
         prefabTombs[tombsPairs[ind].Item1].GetComponent<TombMovement>().SetImpulseForce = tombImpulse;
@@ -96,7 +92,7 @@ public class TombPosSpawner : MonoBehaviour {
         Vector3 locationItem2 = new Vector3(Screen.width, Screen.height, 0);
         locationItem2 = Camera.main.ScreenToWorldPoint(locationItem2);
         locationItem2.x += halfWidthTombs[tombsPairs[ind].Item2];
-        locationItem2.y -= halfHeightTombs[tombsPairs[ind].Item2];
+        locationItem2.y -= halfHeightTombs[tombsPairs[ind].Item2] + stripeSize;
         locationItem2.z = 0;
 
         newScale = prefabTombs[tombsPairs[ind].Item2].transform.localScale;
@@ -110,8 +106,8 @@ public class TombPosSpawner : MonoBehaviour {
         firstPosX = tombDown.transform.position.x;
         lastTomb = tombDown;
 
-        // Add the Killer Skull when the two pairs of tombs is (7, 7)
-        if (ind == 7) {
+        // Add the Killer Skull when the two pairs of tombs is (6, 6)
+        if (ind == tombsPairsAmount-1) {
             SpawnSkull(locationItem1.x);
             lastKillerSkullCont = 0;
         } else {

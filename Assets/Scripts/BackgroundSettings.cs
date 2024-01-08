@@ -2,9 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BackgroundSettings : MonoBehaviour
-{
-    // Start is called before the first frame update
+// Position and size of background
+public class BackgroundSettings : MonoBehaviour {
+
+    // Initialize settings of the background
     void Start()
     {
         // Set position in the middle

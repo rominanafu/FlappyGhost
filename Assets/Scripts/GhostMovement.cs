@@ -46,6 +46,6 @@ public class GhostMovement : MonoBehaviour
     // Stop jumping, and disable gravity
     void OnCollisionEnter2D(Collision2D collision) {
         running = false;
-        rb.gravityScale = 0;
+        GetComponent<Rigidbody2D>().gravityScale = 0;
     }
 }

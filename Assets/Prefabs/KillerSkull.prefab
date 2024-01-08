@@ -227,4 +227,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabTomb07: {fileID: 960717963370693848, guid: 2d6011bd33377814f84b874599415c49, type: 3}
-  impulseForceX: -2.1499999
+  prefabStripe: {fileID: 3091695121320416441, guid: bc25bab97965f9442b9bb1471acd5a12, type: 3}
+  impulseForceX: -2.3499997

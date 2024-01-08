@@ -8,6 +8,8 @@ TagManager:
   - DestroyableBat
   - DestroyableSkull
   - Ghost
+  - DestroyableTomb
+  - Stripes
   layers:
   - Default
   - TransparentFX
