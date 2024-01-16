@@ -37,6 +37,9 @@ public class TombPosSpawner : MonoBehaviour {
     float[] halfWidthTombs = new float[8];
     float stripeSize;
 
+    // Tombs to then check scores
+    Queue<GameObject> queueTombs = new Queue<GameObject>();
+
     bool running = false;
     bool gameOver = false;
     int lastKillerSkullCont = 0;
@@ -106,6 +109,9 @@ public class TombPosSpawner : MonoBehaviour {
         firstPosX = tombDown.transform.position.x;
         lastTomb = tombDown;
 
+        // Saving one of the tombs in the queue
+        queueTombs.Enqueue(tombDown);
+
         // Add the Killer Skull when the two pairs of tombs is (6, 6)
         if (ind == tombsPairsAmount-1) {
             SpawnSkull(locationItem1.x);
@@ -125,6 +131,7 @@ public class TombPosSpawner : MonoBehaviour {
                 lastTomb = null;
                 deltaX = SpawnSpaceDelay;
                 tombImpulse = -2f;
+                queueTombs.Clear();
             }
         }
         if (!running) {
@@ -139,7 +146,14 @@ public class TombPosSpawner : MonoBehaviour {
         }
 
         if (lastTomb != null) {
+
             deltaX = firstPosX - lastTomb.transform.position.x;
+
+            bool delete = Camera.main.GetComponent<ScoreCounter>().AddPoint(queueTombs.Peek().transform.position.x);
+            if (delete) {
+                queueTombs.Dequeue();
+            }
+
         }
     }
 

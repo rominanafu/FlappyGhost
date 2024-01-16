@@ -9,7 +9,12 @@ TagManager:
   - DestroyableSkull
   - Ghost
   - DestroyableTomb
-  - Stripes
+  - CurrentScore
+  - MaxScore
+  - ScoreBox
+  - StripeUp
+  - StripeDown
+  - Background
   layers:
   - Default
   - TransparentFX

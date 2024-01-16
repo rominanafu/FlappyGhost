@@ -2,8 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-// Scale and position of lower stripe
+// Scale, position and change of color of lower stripe
 public class StripeDownSettings : MonoBehaviour {
+
+    [SerializeField]
+    GameObject prefabGreenStripe;
+
+    GameObject greenStripe = null;
 
     // Initialize settings of stripe
     void Start() {
@@ -17,6 +22,21 @@ public class StripeDownSettings : MonoBehaviour {
         // Position
         height = GetComponent<SpriteRenderer>().bounds.size.y;
         transform.position = new Vector3(0, -(worldScreenHeight / 2) - (height / 3), 0);
+    }
+
+    // Change stripe color
+    public void ChangeStripe(bool isBlue) {
+
+        if (isBlue) { // blue
+            if (greenStripe != null) {
+                Destroy(greenStripe);
+                greenStripe = null;
+            }
+        } else { // green
+            if (greenStripe == null) {
+                greenStripe = Instantiate<GameObject>(prefabGreenStripe);
+            }
+        }
     }
 
 }

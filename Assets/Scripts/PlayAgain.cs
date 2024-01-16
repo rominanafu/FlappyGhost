@@ -33,6 +33,9 @@ public class PlayAgain : MonoBehaviour {
                 Camera.main.GetComponent<TombPosSpawner>().SetGameOver(false);
                 gameOver = false;
 
+                // Restart score
+                Camera.main.GetComponent<ScoreCounter>().RestartScore();
+
             }
         }
     }

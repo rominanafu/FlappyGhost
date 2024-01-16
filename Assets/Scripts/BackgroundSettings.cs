@@ -5,6 +5,11 @@ using UnityEngine;
 // Position and size of background
 public class BackgroundSettings : MonoBehaviour {
 
+    [SerializeField]
+    Sprite BlueBackground;
+    [SerializeField]
+    Sprite GreenBackground;
+
     // Initialize settings of the background
     void Start()
     {
@@ -17,6 +22,15 @@ public class BackgroundSettings : MonoBehaviour {
         float worldScreenHeight = Camera.main.orthographicSize * 2f;
         float worldScreenWidth = worldScreenHeight / Screen.height * Screen.width;
         transform.localScale = new Vector3(worldScreenWidth/width + 0.1f, worldScreenHeight/height, 1);
+    }
+
+    // Change background color
+    public void ChangeBackground(bool isBlue) {
+        if (isBlue) { // blue
+            GetComponent<SpriteRenderer>().sprite = BlueBackground;
+        } else { //green
+        GetComponent<SpriteRenderer>().sprite = GreenBackground;
+        }
     }
 
 }

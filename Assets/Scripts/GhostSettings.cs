@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.U2D.Animation;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 
 // Resize ghost sprite to a smaller size
 public class GhostSettings : MonoBehaviour {
@@ -20,6 +22,9 @@ public class GhostSettings : MonoBehaviour {
         location = Camera.main.ScreenToWorldPoint(location);
         location.z = 0;
         transform.position = location;
+
+        // Set x position in ScoreCounter script
+        Camera.main.GetComponent<ScoreCounter>().SetGhostPosX(location.x);
     }
     
 }

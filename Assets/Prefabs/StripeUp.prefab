@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3737172480450945735}
   m_Layer: 0
   m_Name: StripeUp
-  m_TagString: Stripes
+  m_TagString: StripeUp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -161,3 +161,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 660e02ad9a6c24d4dae29b006f7066de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  prefabGreenStripe: {fileID: 2300648527806800122, guid: 873cc90ce18bf534c8916f1c7cb7d08a, type: 3}

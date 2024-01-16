@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 9099566346786894985}
   m_Layer: 0
   m_Name: StripeDown
-  m_TagString: Stripes
+  m_TagString: StripeDown
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -161,3 +161,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 052960d5da959d84897fafa08718c997, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  prefabGreenStripe: {fileID: 2856644299204544771, guid: 27f9ae58a462bad4b986dd752b4ed45d, type: 3}
