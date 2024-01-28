@@ -6,9 +6,6 @@ using UnityEngine.SocialPlatforms.Impl;
 
 // Update current and maximum score
 public class ScoreCounter : MonoBehaviour {
-    
-    // [SerializeField]
-    // GameObject canvas;
 
     int score;
     int maxScore;
@@ -78,7 +75,10 @@ public class ScoreCounter : MonoBehaviour {
     public bool AddPoint(float tombPosX) {
         if (tombPosX <= ghostPosX) {
             score += 1;
-            if (score % 15 == 0) { // Change color every 15 points
+            if (score % 10 == 0) { // Sound effect every 10 points
+                GetComponent<AudioSource>().Play();
+            }
+            if (score % 20 == 0) { // Change color every 20 points
                 isBlue = !isBlue;
                 ChangeColors();
             }

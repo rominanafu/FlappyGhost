@@ -1,9 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
-// using UnityEditor.Callbacks;
 using UnityEngine;
 
-// Ghost jumping movement
+// Ghost jumping movement and sound effect
 public class GhostMovement : MonoBehaviour
 {
     [SerializeField]
@@ -30,6 +29,9 @@ public class GhostMovement : MonoBehaviour
             if (running) {
                 rb.gravityScale = 1;
                 rb.AddForce(new Vector2(0, JumpingImpulse), ForceMode2D.Impulse);
+
+                // Play jumping sound
+                GetComponent<AudioSource>().Play();
             }
         }
 

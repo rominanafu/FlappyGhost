@@ -75,6 +75,9 @@ public class TombPosSpawner : MonoBehaviour {
         int ind = UnityEngine.Random.Range(0, tombsPairsAmount);
         if (lastKillerSkullCont >= 7) {
             ind = tombsPairsAmount-1;
+        } else if (ind == tombsPairsAmount-1 && lastKillerSkullCont < 1) {
+            // Avoid consecutive killer skulls
+            ind = UnityEngine.Random.Range(0, tombsPairsAmount-1);
         }
         
         // Lower tomb spawning

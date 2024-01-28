@@ -18,6 +18,9 @@ public class GameOver : MonoBehaviour {
 
         // Show message
         GameObject gameover = Instantiate<GameObject>(prefabGameOver, location, Quaternion.identity);
+
+        // Game over sound
+        gameover.GetComponent<AudioSource>().Play();
     }
 
     // Called when the ghost collides
