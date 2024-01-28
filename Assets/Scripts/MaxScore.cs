@@ -24,7 +24,7 @@ public class MaxScore : MonoBehaviour {
 
     public void UpdateScore(int score) {
         string txt = score.ToString();
-        txt = "00000".Substring(0, 5-txt.Length) + txt;
+        txt = "000".Substring(0, 3-txt.Length) + txt;
         GetComponent<TextMeshProUGUI>().text = txt;
     }
 

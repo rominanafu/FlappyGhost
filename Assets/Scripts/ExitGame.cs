@@ -38,7 +38,7 @@ public class ExitGame : MonoBehaviour {
         // Exit game with ESC
         if (Input.GetKeyDown("escape")) {
             Application.Quit();
-            UnityEditor.EditorApplication.isPlaying = false;
+            // UnityEditor.EditorApplication.isPlaying = false; // for unity editor
         }
 
         // Exit game with X button
@@ -51,7 +51,7 @@ public class ExitGame : MonoBehaviour {
                     if (mousePosition.y <= transform.position.y + halfHeight) {
                         if (mousePosition.y >= transform.position.y - halfHeight) {
                             Application.Quit();
-                            UnityEditor.EditorApplication.isPlaying = false;
+                            // UnityEditor.EditorApplication.isPlaying = false; // for unity editor
                         }
                     }
                 }

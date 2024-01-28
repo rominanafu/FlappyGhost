@@ -11,9 +11,12 @@ public class GhostMovement : MonoBehaviour
     Sprite GhostUp;
     [SerializeField]
     Sprite GhostDown;
+    [SerializeField]
+    Sprite ScaredGhost;
 
     Rigidbody2D rb;
     bool running = true;
+    bool collisioned = false;
     const float JumpingImpulse = 9.81f;
 
     // Set no gravity in the beginning
@@ -35,8 +38,10 @@ public class GhostMovement : MonoBehaviour
             }
         }
 
-        // Look up / middle / down
-        if (rb.velocity.y >= 3) {
+        // Look scared / up / middle / down
+        if (!running && collisioned) {
+            GetComponent<SpriteRenderer>().sprite = ScaredGhost;
+        } else if (rb.velocity.y >= 3) {
             GetComponent<SpriteRenderer>().sprite = GhostUp;
         } else if (rb.velocity.y <= -3) {
             GetComponent<SpriteRenderer>().sprite = GhostDown;
@@ -48,6 +53,7 @@ public class GhostMovement : MonoBehaviour
     // Stop jumping, and disable gravity
     void OnCollisionEnter2D(Collision2D collision) {
         running = false;
+        collisioned = true;
         GetComponent<Rigidbody2D>().gravityScale = 0;
     }
 }
