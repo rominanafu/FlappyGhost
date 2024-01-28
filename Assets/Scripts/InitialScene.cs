@@ -15,6 +15,8 @@ public class InitialScene : MonoBehaviour {
     GameObject prefabDownStripe;
     [SerializeField]
     GameObject prefabScoreBox;
+    [SerializeField]
+    GameObject prefabX;
 
     // Instantiate objects
     void Start() {
@@ -23,6 +25,7 @@ public class InitialScene : MonoBehaviour {
         Instantiate<GameObject>(prefabUpStripe);
         Instantiate<GameObject>(prefabDownStripe);
         Instantiate<GameObject>(prefabScoreBox);
+        Instantiate<GameObject>(prefabX);
     }
     
 }

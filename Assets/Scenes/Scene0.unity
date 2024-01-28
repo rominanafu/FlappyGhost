@@ -299,6 +299,7 @@ MonoBehaviour:
   prefabUpStripe: {fileID: 3091695121320416441, guid: bc25bab97965f9442b9bb1471acd5a12, type: 3}
   prefabDownStripe: {fileID: 4081437046439170647, guid: 2e7b0e9d3a7a8414bb832e85d8b2b6d1, type: 3}
   prefabScoreBox: {fileID: 7431235423915411216, guid: a0649929737203a48966857a28553edc, type: 3}
+  prefabX: {fileID: 8782259034167218902, guid: d3c3d4d103710134ca2780902b832ca3, type: 3}
 --- !u!114 &519420040
 MonoBehaviour:
   m_ObjectHideFlags: 0
